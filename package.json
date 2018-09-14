@@ -1,0 +1,14 @@
+{
+  "name": "oipproto",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "buildProto": "pbjs -t static-module -w closure -o lib/oipProto.js proto/oip.proto proto/historian.proto && uglifyjs --compress --mangle --output lib/oipProto.min.js -- lib/oipProto.js"
+  },
+  "dependencies": {
+    "protobufjs": "~6.8.8"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.4.9"
+  }
+}
