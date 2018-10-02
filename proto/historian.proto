@@ -10,6 +10,8 @@ message HistorianDataPoint {
     double FloMarketPriceBTC = 7;
     double FloMarketPriceUSD = 8;
     double LtcMarketPriceUSD = 9;
+    double NiceHashLast = 10;
+    double NiceHash24hr = 11;
 }
 
 
