@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package oipProto;
+
 message HistorianDataPoint {
     int32 Version = 1;
     bytes PubKey = 2;

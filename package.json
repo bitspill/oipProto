@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "buildProto": "pbjs -t static-module -w closure -o lib/oipProto.js proto/oip.proto proto/historian.proto && uglifyjs --compress --mangle --output lib/oipProto.min.js -- lib/oipProto.js"
+    "buildJS": "npm run buildJSBrowser && npm run buildJSModule",
+    "buildJSBrowser": "pbjs -t static-module -w closure -o js/browser/oipProto.js proto/oip.proto proto/historian.proto && uglifyjs --compress --mangle --output js/browser/oipProto.min.js -- js/oipProto.js",
+    "buildJSModule": "pbjs -t static-module -o js/lib/oipProto.js proto/oip.proto proto/historian.proto",
+    "buildGo": "protoc -I=proto --go_out=go/oipProto proto/oip.proto proto/historian.proto"
   },
   "dependencies": {
     "protobufjs": "~6.8.8"

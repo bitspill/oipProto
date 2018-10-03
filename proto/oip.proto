@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package oipProto;
+
 message SignedMessage {
     // Raw Data that was signed by this message
     bytes SerializedMessage = 1;
@@ -16,7 +18,7 @@ message SignedMessage {
 // Currently supported message types
 enum MessageTypes {
     // Invalid
-    Unknown = 0;
+    InvalidMessage = 0;
     // OIP 0.5 record message
     OIP05 = 1;
     // Historian record
@@ -26,7 +28,7 @@ enum MessageTypes {
 // Currently supported signature verification means
 enum SignatureTypes {
     // Invalid
-    Unknown = 0;
+    InvalidSignature = 0;
     // FLO address message signing
     Flo = 1;
     // Bitcoin address message signing

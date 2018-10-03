@@ -3,7 +3,7 @@
 
 let pbjs = require('protobufjs/minimal')
 let util = pbjs.util
-let oipProto = require('./lib/oipProto')
+let oipProto = require('./js/lib/oipProto')
 let SignedMessage = oipProto.SignedMessage
 let HistorianDataPoint = oipProto.HistorianDataPoint
 
