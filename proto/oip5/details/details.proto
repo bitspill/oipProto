@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package oip5.details;
+
+option go_package = "github.com/bitspill/oipProto/go/oip5/details";
+
+import public "proto/oip5/details/researchTomogram.proto";
+import public "proto/oip5/details/propertyTenure.proto";

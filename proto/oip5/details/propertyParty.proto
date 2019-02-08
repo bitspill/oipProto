@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package oip5.details;
+
+option go_package = "github.com/bitspill/oipProto/go/oip5/details";
+
+import "google/protobuf/any.proto";
+
+message PropertyParty {
+    string ns = 1;
+    Geometry geo = 2;
+    string spatialType = 3;
+    repeated string spatialUnits = 4;
+    repeated double boundingBox = 5;
+    google.protobuf.Any Attrs = 6;
+}
+
+message Geometry {
+    // embed geojson?
+    // spec out types used specifically?
+    // look at geobuf?
+    // https://github.com/mapbox/geobuf/blob/master/geobuf.proto
+}

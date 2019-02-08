@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package oip5;
+
+option go_package = "github.com/bitspill/oipProto/go/oip5";
+
+import "proto/oip5/artifact.proto";
+
+message OipFive {
+    oneof Action {
+        Publish publish = 3;
+        Register register = 4;
+        Edit edit = 5;
+        Transfer transfer = 6;
+        Deactivate deactivate = 7;
+    }
+}
+
+message Publish {
+    oneof Record {
+        Artifact artifact = 1;
+    }
+}
+
+message Publisher {
+}
+
+message Influencer {
+}
+
+message Platform {
+}
+
+message Pool {
+}
+
+message Miner {
+}
+
+message Edit {
+    oneof Record {
+        Artifact artifact = 1;
+        Publisher publisher = 2;
+        Influencer influencer = 3;
+        Platform platform = 4;
+        Pool pool = 5;
+        Miner miner = 6;
+    }
+}
+
+message Transfer {
+}
+
+message Register {
+}
+
+message Deactivate {
+}

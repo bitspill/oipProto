@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package oip5.details;
+
+option go_package = "github.com/bitspill/oipProto/go/oip5/details";
+
+import "google/protobuf/any.proto";
+
+message PropertyTenure {
+    string ns = 1;
+    string tenureType = 2;
+    repeated string tenure = 3;
+    repeated string spatialUnits = 4;
+    google.protobuf.Any Attrs = 5;
+}

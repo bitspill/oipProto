@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package oip5.details;
+
+option go_package = "github.com/bitspill/oipProto/go/oip5/details";
+
+message ResearchTomogram {
+    int64 Date = 1;
+    int64 NCBItaxID = 2;  // was used in json for a while mistakenly as NBCItxID
+    string Sid = 3;
+    string ArtNotes = 4;
+    string ScopeName = 5;
+    string Roles = 6;
+    string SpeciesName = 7;
+    string Strain = 8;
+    int64 TiltSingleDual = 9;
+    float Defocus = 10;
+    float Dosage = 11;
+    float TiltConstant = 12;
+    float TiltMin = 13;
+    float TiltMax = 14;
+    float TiltStep = 15;
+    float Magnification = 16;
+    string Emdb = 17;
+    string Microscopist = 18;
+    string Institution = 19;
+    string Lab = 20;
+}

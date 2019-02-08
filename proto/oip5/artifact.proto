@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package oip5;
+
+option go_package = "github.com/bitspill/oipProto/go/oip5";
+
+import "google/protobuf/any.proto";
+import "proto/oip5/details/details.proto";
+
+message Artifact {
+    Type type = 1;
+    SubType subType = 2;
+
+    google.protobuf.Any details = 3;
+
+    string floAddress = 4;
+    Info info = 5;
+    int64 timestamp = 6;
+    Storage storage = 7;
+}
+
+message Info {
+    string description = 1;
+    string title = 2;
+    repeated string tags = 3;
+}
+
+message Storage {
+    Network network = 1;
+    string location = 2;
+    repeated File files = 3;
+}
+
+message File {
+    string displayName = 1;
+    string notes = 2;
+    string filePath = 3;
+    uint64 size = 4;
+    FileType type = 5;
+    FileSubType subType = 6;
+    string contentType = 7;
+
+    // Research
+    string software = 20;
+}
+
+enum Network {
+    UNKNOWN_NETWORK = 0;
+    IPFS = 1;
+    BITTORRENT = 2;
+}
+
+enum Type {
+    UNKNOWN_TYPE = 0;
+    RESEARCH = 1;
+    PROPERTY = 2;
+}
+
+enum SubType {
+    UNKNOWN_SUBTYPE = 0;
+
+    // Research
+    TOMOGRAM = 100;
+
+    // Property
+    TENURE = 200;
+    PARTY = 201;
+    SPATIALUNIT = 202;
+}
+
+enum FileType {
+    UNKNOWN_FILE_TYPE = 0;
+
+    // Common
+    IMAGE_FILE = 20;
+    VIDEO_FILE = 21;
+
+    // Research
+    TOMOGRAM_FILE = 100;
+}
+
+enum FileSubType {
+    UNKNOWN_FILE_SUBTYPE = 0;
+
+    // Common
+    THUMBNAIL = 20;
+
+    // Research
+    SNAPSHOT = 100;
+    TILT_SERIES = 101;
+    KEY_IMAGE = 102;
+    KEY_MOVIE = 103;
+    RECONSTRUCTION = 104;
+
+}
